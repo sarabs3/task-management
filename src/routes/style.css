@@ -1,0 +1,141 @@
+/* * {
+    transition: 0.3s;
+} */
+
+body {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #666;
+    --default-transition: 0.3s;
+    background: #FAF9FC;
+}
+
+.page {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-family: 'Heebo', sans-serif;
+    font-size: 40px;
+    font-weight: 100;
+}
+
+.taskList__list {
+    width: 550px;
+    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 18px;
+    display: flex;
+    cursor: pointer;
+    transition: var(--default-transition);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+}
+.taskList__list.taskList__Header{
+    background: none;
+    box-shadow: none;
+    border: none;
+    margin-bottom: 5px;
+    font-size: 10px;
+    color: #444;
+}
+.taskList__list.taskList__Header .taskList__assign{
+    text-align: center;
+}
+.taskList__list.taskList__Header > *{
+    padding: 0;
+}
+.taskList__list.taskList__list--button {
+    background: linear-gradient(to left, #e67eee, #e67e22);
+    border-radius: 3px;
+    border: none;
+}
+
+.taskList__list.taskList__list--button:hover,
+.taskList__list.taskList__Header:hover {
+    border: none;
+}
+
+.taskList__list:hover {
+    /* background-color: #e67e22; */
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    /* color: #fff; */
+}
+
+.taskList__list:hover .taskList__deadline .actions {
+    opacity: 1;
+    height: 100%;
+    display: inline-flex;
+}
+
+.taskList__list:hover .taskList__deadline .data {
+    opacity: 0;
+    height: 0;
+}
+
+.taskList__title {
+    width: 60%;
+    padding: 24px 10px;
+}
+
+.taskList__assign {
+    width: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.taskList__assign .image {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+.taskList__deadline {
+    width: 20%;
+    padding: 24px 0;
+}
+
+.taskList__deadline .actions {
+    opacity: 0;
+    height: 0;
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    display: none;
+}
+
+.taskList__deadline .actions span {
+    width: 50%;
+    text-align: center;
+}
+
+.taskList__add-button {
+    padding: 15px;
+    border: none;
+    background: none;
+    color: #fff;
+    width: 100%;
+    font-size: 1.2rem;
+    font-family: 'Heebo', sans-serif;
+    transition: var(--default-transition);
+    cursor: pointer;
+}
+
+.taskList__add-button:hover {
+    box-shadow: 0 6px 8px -2px rgba(0, 0, 0, 0.2);
+}
