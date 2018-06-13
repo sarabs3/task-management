@@ -1,3 +1,7 @@
+language: node
+cache:
+- node_modules
+
 stages:
   - test
   - build
@@ -17,6 +21,15 @@ deploy_staging:
     - echo "Deploy to staging server"
   environment:
     name: staging
-    url: https://staging.example.com
+    url: https://test-sarab-projectmanagement.herokuapp.com
   only:
   - master
+
+  # before_script:
+  provider: heroku
+  api_key:
+    secure: KEY
+  app: test-sarab-projectmanagement
+  on:
+    repo: sarabs3/task-management
+
